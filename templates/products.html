@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Products</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+<div class="navbar">
+    <a href="/dashboard">Home</a>
+    <a href="/products">Products</a>
+    <a href="/logout" id="logoutBtn">Logout</a>
+</div>
+
+<div class="dashboard">
+
+    <h2>Product List</h2>
+
+    <a href="/add-product"
+       id="addProductBtn">
+       Add Product
+    </a>
+
+    <br><br>
+
+    <table 
+        border="1"
+        id="productTable">
+
+        <tr>
+            <th>ID</th>
+            <th>Image</th>
+            <th>Name</th>
+            <th>Category</th>
+            <th>Price</th>
+            <th>Action</th>
+        </tr>
+
+        {% for product in products %}
+
+        <tr>
+
+            <td>{{ product.id }}</td>
+            <td>
+                <img src="{{ url_for('static', filename='images/' + product.image) }}" width="80" id="productImage">
+            </td>
+            <td>{{ product.name }}</td>
+            <td>{{ product.category }}</td>
+            <td>Rp {{ product.price }}</td>
+
+            <td>
+
+                <a 
+                    href="/edit-product/{{ product.id }}"
+                    id="editProductBtn">
+                    Edit
+                </a>
+
+                |
+
+                <a 
+                    href="/delete-product/{{ product.id }}"
+                    id="deleteProductBtn">
+                    Delete
+                </a>
+
+            </td>
+
+        </tr>
+
+        {% endfor %}
+
+    </table>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Dashboard - Maritano Music Store</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    </head>
+    <body>
+
+        <div class="navbar">
+            <a href="/dashboard">Home</a>
+            <a href="/products" id="productMenu">Products</a>
+            <a href="/logout" id="logoutBtn">Logout</a>
+        </div>
+
+        <div class="dashboard">
+
+            <h1 id="dashboardTitle"> Welcome {{user}}</h1>
+
+            <p>Manage your music store inventory</p>
+            
+            <div class="cards">
+                
+                <div class="card">
+                    <h3>Guitar</h3>
+                    <p>Electric & Acoustic</p>
+                </div>
+                
+                <div class="card">
+                    <h3>Piano</h3>
+                    <p>Acoustic & Digital</p>
+                </div>
+
+                <div class="card">
+                    <h3>Drum</h3>
+                    <p>Professional Kits</p>
+                </div>
+
+            </div>
+
+        </div>
+    </body>
+</html>

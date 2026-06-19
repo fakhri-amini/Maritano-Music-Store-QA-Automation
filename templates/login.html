@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Maritano MUsic Store - Login</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    </head>
+    <body>
+        <div class="login-container">
+
+            <h2>Login Maritano Music Store</h2>
+
+            {% if error %}
+                <p class="error">{{ error }}</p>
+            {% endif %}
+
+            <form method="post">
+                <input type="text" name="username" placeholder="Username" id="username">
+                <input type="password" name="password" placeholder="Password" id="password">
+                <button type="submit" id="loginBtn">Login</button>
+            </form>
+
+        </div>
+                
+    </body>
+</html>
